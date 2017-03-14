@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="round_btn_height">36dp</dimen>
+    <dimen name="fab_height">56dp</dimen>
+    <dimen name="fab_radius">28dp</dimen>
+    <dimen name="fab_radius_halved">14dp</dimen>
 </resources>
