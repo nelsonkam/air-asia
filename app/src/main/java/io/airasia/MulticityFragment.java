@@ -20,6 +20,7 @@ public class MulticityFragment extends Fragment {
 
     Toolbar toolbar;
     TabLayout tabLayout;
+    Boolean setup = false;
     public MulticityFragment() {
         // Required empty public constructor
     }
@@ -31,17 +32,21 @@ public class MulticityFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_multicity, container, false);
     }
+    
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
-        ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewPager);
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        tabLayout = (TabLayout) getView().findViewById(R.id.tab_layout);
+        ViewPager viewPager = (ViewPager) getView().findViewById(R.id.viewPager);
         setupViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
+        setup = true;
     }
+
     private void setupViewPager(ViewPager viewPager) {
-        TabPagerAdapter adapter = new TabPagerAdapter(getActivity().getSupportFragmentManager());
+        TabPagerAdapter adapter = new TabPagerAdapter(getChildFragmentManager());
+        // Add fragments as well as titles to be added as tabs
         adapter.addFrag(new FlightFragment(), "Flight");
         adapter.addFrag(new FlightFragment(), "Train");
         adapter.addFrag(new FlightFragment(), "Bus");
