@@ -1,26 +1,11 @@
 package io.airasia;
 
-import android.app.DatePickerDialog;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-
-import android.support.v4.app.FragmentTransaction;
-import android.net.Uri;
-import android.support.design.widget.TabLayout;
-import android.support.design.widget.TextInputLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -40,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         round.setOnClickListener(this);
         multicity.setOnClickListener(this);
 
-        // One way is selected by default
+        // "One way" is selected by default
         activateButton(oneWay);
         SimpleFragment fragment = SimpleFragment.newInstance("One Way");
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
