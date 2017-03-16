@@ -42,5 +42,31 @@
                 android:background="@drawable/main_background" />
         </android.support.design.widget.CoordinatorLayout>
 
+        <android.support.v7.widget.CardView
+            android:id="@+id/timeline_fab"
+            android:layout_width="@dimen/fab_height"
+            android:layout_height="@dimen/fab_height"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="@dimen/fab_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/departure_text_input_layout"
+            app:layout_constraintVertical_bias="0.9">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/fab_gradient" />
+
+            <ImageView
+                android:id="@+id/timeline_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fab_radius_halved"
+                android:layout_marginTop="@dimen/fab_radius_halved"
+                android:src="@drawable/ic_timeline" />
+        </android.support.v7.widget.CardView>
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

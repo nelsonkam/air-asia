@@ -16,10 +16,12 @@ public class HighlightView extends View {
     private RectF rectF;
     private Rect rect;
     private Paint paint;
+    private String color;
 
-    public HighlightView(Context context, Rect rect) {
+    public HighlightView(Context context, Rect rect, String color) {
         super(context);
         this.rect = rect;
+        this.color = color;
         init();
     }
 
@@ -34,7 +36,7 @@ public class HighlightView extends View {
 
         rectF.set(this.rect);
 
-        paint.setColor(Color.BLUE);
+        paint.setColor(Color.parseColor(this.color));
         paint.setStrokeWidth(4);
         paint.setStyle(Paint.Style.STROKE);
         canvas.drawRoundRect(rectF, 8, 8, paint);

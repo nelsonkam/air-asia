@@ -5,9 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -16,11 +13,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 import io.airasia.R;
-import io.airasia.adapters.TripAdapter;
 
 
 public class FlightFragment extends Fragment implements View.OnClickListener, DatePickerDialog.OnDateSetListener, View.OnTouchListener {
@@ -47,22 +42,11 @@ public class FlightFragment extends Fragment implements View.OnClickListener, Da
         departureEditText.setOnTouchListener(this);
         arrivalEditText = (EditText) view.findViewById(R.id.arrival_edit_text);
         arrivalEditText.setOnTouchListener(this);
-        CardView fab = (CardView) getView().findViewById(R.id.timeline_fab);
-        fab.setOnClickListener(this);
+//        CardView fab = (CardView) getView().findViewById(R.id.timeline_fab);
+//        fab.setOnClickListener(this);
         firstView = (ConstraintLayout) view.findViewById(R.id.first_view);
         secondView = (ConstraintLayout) view.findViewById(R.id.second_view);
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-        recyclerView.setHasFixedSize(true);
 
-        // use a linear layout manager
-        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(mLayoutManager);
-        ArrayList<Boolean> states = new ArrayList<>();
-        states.add(true);
-        states.add(false);
-        states.add(false);
-        states.add(false);
-        recyclerView.setAdapter(new TripAdapter(states, getActivity()));
     }
 
     @Override

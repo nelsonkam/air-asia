@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         fragmentContainer = (RelativeLayout) findViewById(R.id.fragment_container);
         initialBackground = fragmentContainer.getBackground();
-
+        ViewGroup parentViewGroup = ((ViewGroup) getWindow().getDecorView());
         // "One way" is selected by default
         activateButton(oneWay);
     }

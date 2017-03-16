@@ -80,7 +80,7 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.ViewHolder> {
             coloredCircle = (CardView) itemView.findViewById(R.id.colored_circle);
             secondConnector = itemView.findViewById(R.id.second_item_connector);
             tripView = (CardView) itemView.findViewById(R.id.trip_view);
-            itemView.setOnClickListener(this);
+            tripView.setOnClickListener(this);
             this.ctx = ctx;
         }
 
