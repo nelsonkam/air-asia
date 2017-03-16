@@ -1,4 +1,4 @@
-package io.airasia;
+package io.airasia.fragments;
 
 
 import android.os.Bundle;
@@ -6,19 +6,22 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import io.airasia.R;
+import io.airasia.adapters.TabPagerAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class MulticityFragment extends Fragment {
 
-    Toolbar toolbar;
     TabLayout tabLayout;
-    Boolean setup = false;
+    TabPagerAdapter adapter;
+    ViewPager viewPager;
+
     public MulticityFragment() {
         // Required empty public constructor
     }
@@ -36,14 +39,13 @@ public class MulticityFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         tabLayout = (TabLayout) getView().findViewById(R.id.tab_layout);
-        ViewPager viewPager = (ViewPager) getView().findViewById(R.id.viewPager);
+        viewPager = (ViewPager) getView().findViewById(R.id.viewPager);
         setupViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
-        setup = true;
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        TabPagerAdapter adapter = new TabPagerAdapter(getChildFragmentManager());
+        adapter = new TabPagerAdapter(getChildFragmentManager());
         // Add fragments as well as titles to be added as tabs
         adapter.addFrag(new FlightFragment(), "Flight");
         adapter.addFrag(new FlightFragment(), "Train");

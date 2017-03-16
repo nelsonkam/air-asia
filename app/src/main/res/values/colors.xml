@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#aa2227</color>
     <color name="colorAccent">#FF4081</color>
     <color name="topPink">#f43139</color>
+    <color name="bottomPink">#E95196</color>
+    <color name="timelineGreen">#21C46B</color>
 </resources>
